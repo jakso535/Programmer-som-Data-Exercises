@@ -24,6 +24,7 @@ type expr =
   | CstI of int
   | Var of string
   | Prim of string * expr * expr
+  | If of expr * expr * expr
 
 let e1 = CstI 17
 
@@ -38,6 +39,7 @@ let e6 = Prim("max", CstI 3, CstI 7)
 let e7 = Prim("max", CstI 7, CstI 3)
 let e8 = Prim("==", CstI 3, CstI 7)
 let e9 = Prim("==", CstI 7, CstI 7)
+let e10 = If(Var "a", CstI 11, CstI 22)
 
 
 
@@ -58,6 +60,11 @@ let rec eval e (env : (string * int) list) : int =
         | "max" -> if a > b then a else b
         | "==" -> if a = b then 1 else 0
         | _ -> failwith "unknown operator"
+    | If(e1, e2, e3) ->
+        let cond = eval e1 env <> 0
+        let e2 = eval e2 env
+        let e3 = eval e3 env
+        if cond then e2 else e3
 
 let e1v  = eval e1 env
 let e2v1 = eval e2 env
@@ -71,3 +78,4 @@ let e6v = eval e6 env
 let e7v = eval e7 env
 let e8v = eval e8 env
 let e9v = eval e9 env
+let e10v = eval e10 env
