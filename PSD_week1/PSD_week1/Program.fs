@@ -134,6 +134,14 @@ let rec simplify (a:aexpr) =
         elif a1 = a2 then CstI2 0
         else Sub (a1, a2)
 
+let rec symdiff (a:aexpr) (v:string) =
+    match a with
+    | CstI2 _ -> CstI2 0
+    | Var2 s -> if s = v then CstI2 1 else CstI2 0
+    | Add(a1, a2) -> Add(symdiff a1 v, symdiff a2 v)
+    | Mul(a1, a2) -> Add(Mul (symdiff a1 v, a2), Mul (symdiff a2 v, a1))
+    | Sub(a1, a2) -> Sub(symdiff a1 v, symdiff a2 v)
+
 let e1v  = eval e1 env
 let e2v1 = eval e2 env
 let e2v2 = eval e2 [("a", 314)]
@@ -150,3 +158,4 @@ let e10v = eval e10 env
 
 let e14simp = simplify e14
 let e15simp = simplify e15
+let e16sym = symdiff e12 "v"
