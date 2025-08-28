@@ -2,7 +2,7 @@
 
 (* Evaluating simple expressions with variables *)
 
-module Intro2
+//module Intro2
 
 (* Association lists map object language variables to their values *)
 
@@ -113,16 +113,22 @@ let rec simplify (a:aexpr) =
     | CstI2 i -> CstI2 i
     | Var2 s -> Var2 s
     | Add(a1, a2) ->
+        let a1 = simplify a1
+        let a2 = simplify a2
         if a1 = CstI2 0 then simplify a2
         else if a2 = CstI2 0 then simplify a1
         else Add (a1, a2)
     | Mul(a1, a2) ->
+        let a1 = simplify a1
+        let a2 = simplify a2
         if a1 = CstI2 0 then CstI2 0
         else if a2 = CstI2 0 then CstI2 0
         elif a1 = CstI2 1 then simplify a2
         else if a2 = CstI2 1 then simplify a1
         else Mul (a1, a2)
     | Sub(a1, a2) ->
+        let a1 = simplify a1
+        let a2 = simplify a2
         if a1 = CstI2 0 then simplify a2
         else if a2 = CstI2 0 then simplify a1
         elif a1 = a2 then CstI2 0
@@ -142,5 +148,5 @@ let e8v = eval e8 env
 let e9v = eval e9 env
 let e10v = eval e10 env
 
-//let e14simp = simplify e14
+let e14simp = simplify e14
 let e15simp = simplify e15
