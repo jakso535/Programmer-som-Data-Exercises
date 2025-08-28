@@ -2,7 +2,7 @@
 
 (* Evaluating simple expressions with variables *)
 
-// module Intro2
+module Intro2
 
 (* Association lists map object language variables to their values *)
 
@@ -52,7 +52,30 @@ let e10 = If(Var "a", CstI 11, CstI 22)
 let e11 = Sub (Var2 "v", Add (Var2 "w", Var2 "z"))
 let e12 = Mul (CstI2 2, e11)
 let e13 = Add (Var2 "x", Add (Var2 "y", Add (Var2 "z", Var2 "v")))
-
+let e14 =
+    Add(
+        Add (CstI2 0, Var2 "x"),                  // 0 + e  -> e
+        Add(
+            Add (Var2 "y", CstI2 0),              // e + 0  -> e
+            Add(
+                Sub (Var2 "z", CstI2 0),          // e - 0  -> e
+                Add(
+                    Mul (CstI2 1, Var2 "u"),      // 1 * e  -> e
+                    Add(
+                        Mul (Var2 "v", CstI2 1),  // e * 1  -> e
+                        Add(
+                            Mul (CstI2 0, Var2 "w"),  // 0 * e -> 0
+                            Add(
+                                Mul (Var2 "k", CstI2 0), // e * 0 -> 0
+                                Sub (Var2 "p", Var2 "p") // e - e -> 0
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+let e15 = Add (CstI2 0, CstI2 1)
 
 (* Evaluation within an environment *)
 
@@ -119,3 +142,5 @@ let e8v = eval e8 env
 let e9v = eval e9 env
 let e10v = eval e10 env
 
+//let e14simp = simplify e14
+let e15simp = simplify e15
