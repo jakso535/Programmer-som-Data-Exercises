@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Jake/Desktop/PSD_week1/PSD_week1/PSD_week1.fsproj": {}
+    "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {}
   },
   "projects": {
-    "/Users/Jake/Desktop/PSD_week1/PSD_week1/PSD_week1.fsproj": {
+    "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jake/Desktop/PSD_week1/PSD_week1/PSD_week1.fsproj",
+        "projectUniqueName": "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
         "projectName": "PSD_week1",
-        "projectPath": "/Users/Jake/Desktop/PSD_week1/PSD_week1/PSD_week1.fsproj",
+        "projectPath": "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
         "packagesPath": "/Users/Jake/.nuget/packages/",
-        "outputPath": "/Users/Jake/Desktop/PSD_week1/PSD_week1/obj/",
+        "outputPath": "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Jake/.nuget/NuGet/NuGet.Config"
