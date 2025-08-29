@@ -64,8 +64,8 @@ public class AccessExample
 {
     public static void Main(string[] args)
     {
-        Object[] env = [("a", 3), ("c", 78), ("baf", 666), ("b", 111)];
-        Console.WriteLine("Hello World!");
+        Expr e = new Add(new CstI(17), new Var("z"));
+        Console.WriteLine(e.Eval(new Dictionary<string, int>()));
     }
 }
 
