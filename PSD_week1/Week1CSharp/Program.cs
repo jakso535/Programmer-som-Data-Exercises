@@ -1,19 +1,30 @@
-﻿
+﻿using System.Collections.Generic;
 public abstract class Expr
 {
+    public abstract int Eval(Dictionary<string, int> env);
     public override string ToString()
     {
-        //return 
+        
     }
 }
 
 public class CstI : Expr
 {
+    protected int i;
+    
+    public override int Eval(Dictionary<string,int> env) {
+        return i;
+    }
     
 }
 
 public class Var : Expr
 {
+    protected string name;
+    
+    public override int Eval(Dictionary<string,int> env) {
+        return env.ContainsKey(name) ? env[name] : 0;
+    }
 
 }
 
