@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XlYck0x8xGE=",
+  "dgSpecHash": "hGu8dSEwkbU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ssxjs\\RiderProjects\\Programmer-som-Data-Exercises\\PSD_week1\\PSD_week1\\PSD_week1.fsproj",
+  "projectFilePath": "/Users/Jake/Desktop/ITU/4-semester/ISE/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ssxjs\\.nuget\\packages\\fsharp.core\\8.0.403\\fsharp.core.8.0.403.nupkg.sha512"
+    "/Users/Jake/.nuget/packages/fsharp.core/8.0.403/fsharp.core.8.0.403.nupkg.sha512"
   ],
   "logs": []
 }

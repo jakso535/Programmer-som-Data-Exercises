@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("PSD_week1")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd4f4cac1426774d3fec080de4f3eb55efbc729e")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c3d3b6b9c7e2dc6f772ba0f0ffef66f2702d239")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("PSD_week1")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("PSD_week1")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
