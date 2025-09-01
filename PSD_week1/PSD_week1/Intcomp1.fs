@@ -256,7 +256,10 @@ let rec tcomp (e : expr) (cenv : string list) : texpr =
       let cenv1 = x :: cenv
       match lets with
       | [] -> TLet(tcomp erhs cenv, tcomp ebody cenv1)
-      | let1 :: lets1 -> TLet (((tcomp (Let(lets, ebody)) cenv1), tcomp (Let let1) cenv))
+      | let1 :: lets1 ->
+            let tlets1 =  // tcomp for lets1
+            let tlet1 = failwith "idk haha" // tcomp for let1
+            TLet (tlets1, tlet1)
     | Prim(ope, e1, e2) -> TPrim(ope, tcomp e1 cenv, tcomp e2 cenv);;
 
 // (* Evaluation of target expressions with variable indexes.  The
