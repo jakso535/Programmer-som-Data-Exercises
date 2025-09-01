@@ -32,6 +32,7 @@ let e4 = Prim("+", Prim("+", CstI 20, Let("z", CstI 17,
 
 let e5 = Prim("*", CstI 2, Let("x", CstI 3, Prim("+", Var "x", CstI 4)));; *)
 
+(* Our example expression using the new language *)
 let e6 = Let([("x", Prim("+", CstI 3, CstI 4)); ("y", CstI 2)], Prim("+", Var "x", Var "y"))
 let e7 = Let([("z", Prim("+", CstI 3, CstI 4)); ("j", e6)], Prim("+", Var "z", Var "j"))
 let e8 = Let([("a", CstI 20); ("c", CstI 20)], Prim("+", Var "a", Var "c"))
@@ -45,6 +46,7 @@ let rec lookup env x =
     | []        -> failwith (x + " not found")
     | (y, v)::r -> if x=y then v else lookup r x;;
 
+(* Our eval function with extended expression language *)
 let rec eval e (env : (string * int) list) : int =
     match e with
     | CstI i            -> i
@@ -208,9 +210,10 @@ let rec minus (xs, ys) =
 
 (* Find all variables that occur free in expression e *)
 
+(* Our freevars function with extended language *)
 let rec freevars e : string list =
     match e with
-    | CstI i -> []
+    | CstI _ -> []
     | Var x  -> [x]
     | Let(binds, ebody) ->
       let rec aux binds acc =
@@ -220,7 +223,7 @@ let rec freevars e : string list =
           let fvrhs = minus (freevars erhs, acc)
           union (fvrhs, aux lets (x :: acc))
       aux binds []
-    | Prim(ope, e1, e2) -> union (freevars e1, freevars e2);;
+    | Prim(_, e1, e2) -> union (freevars e1, freevars e2);;
 
 (* Alternative definition of closed *)
 
@@ -248,6 +251,7 @@ let rec getindex vs x =
 
 (* Compiling from expr to texpr *)
 
+(* Our tcomp function, using extended language *)
 let rec tcomp (e : expr) (cenv : string list) : texpr =
     match e with
     | CstI i -> TCstI i
@@ -261,18 +265,18 @@ let rec tcomp (e : expr) (cenv : string list) : texpr =
 // (* Evaluation of target expressions with variable indexes.  The
 //    run-time environment renv is a list of variable values (ints).  *)
 //
-// let rec teval (e : texpr) (renv : int list) : int =
-//     match e with
-//     | TCstI i -> i
-//     | TVar n  -> List.nth renv n
-//     | TLet(erhs, ebody) -> 
-//       let xval = teval erhs renv
-//       let renv1 = xval :: renv 
-//       teval ebody renv1 
-//     | TPrim("+", e1, e2) -> teval e1 renv + teval e2 renv
-//     | TPrim("*", e1, e2) -> teval e1 renv * teval e2 renv
-//     | TPrim("-", e1, e2) -> teval e1 renv - teval e2 renv
-//     | TPrim _            -> failwith "unknown primitive";;
+ let rec teval (e : texpr) (renv : int list) : int =
+     match e with
+     | TCstI i -> i
+     | TVar n  -> List.nth renv n
+     | TLet(erhs, ebody) -> 
+       let xval = teval erhs renv
+       let renv1 = xval :: renv 
+       teval ebody renv1 
+     | TPrim("+", e1, e2) -> teval e1 renv + teval e2 renv
+     | TPrim("*", e1, e2) -> teval e1 renv * teval e2 renv
+     | TPrim("-", e1, e2) -> teval e1 renv - teval e2 renv
+     | TPrim _            -> failwith "unknown primitive";;
 
 (* Correctness: eval e []  equals  teval (tcomp e []) [] *)
 
