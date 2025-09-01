@@ -241,22 +241,26 @@ type texpr =                            (* target expressions *)
 
 (* Map variable name to variable index at compile-time *)
 
-// let rec getindex vs x = 
-//     match vs with 
-//     | []    -> failwith "Variable not found"
-//     | y::yr -> if x=y then 0 else 1 + getindex yr x;;
-//
-// (* Compiling from expr to texpr *)
-//
-// let rec tcomp (e : expr) (cenv : string list) : texpr =
-//     match e with
-//     | CstI i -> TCstI i
-//     | Var x  -> TVar (getindex cenv x)
-//     | Let(x, erhs, ebody) -> 
-//       let cenv1 = x :: cenv 
-//       TLet(tcomp erhs cenv, tcomp ebody cenv1)
-//     | Prim(ope, e1, e2) -> TPrim(ope, tcomp e1 cenv, tcomp e2 cenv);;
-//
+let rec getindex vs x = 
+    match vs with 
+    | []    -> failwith "Variable not found"
+    | y::yr -> if x=y then 0 else 1 + getindex yr x;;
+
+(* Compiling from expr to texpr *)
+
+let rec tcomp (e : expr) (cenv : string list) : texpr =
+    match e with
+    | CstI i -> TCstI i
+    | Var x  -> TVar (getindex cenv x)
+    | Let((x, erhs) :: lets, ebody) ->
+      let cenv1 = x :: cenv
+      
+      match lets with
+      | [] -> TLet(tcomp erhs cenv, tcomp ebody cenv1)
+      | (x1, erhs1) :: lets -> 
+      
+    | Prim(ope, e1, e2) -> TPrim(ope, tcomp e1 cenv, tcomp e2 cenv);;
+
 // (* Evaluation of target expressions with variable indexes.  The
 //    run-time environment renv is a list of variable values (ints).  *)
 //
