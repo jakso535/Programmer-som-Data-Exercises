@@ -13,4 +13,4 @@ let sinstrToInt (s : sinstr) : int list =
     
 let assemble (sl : sinstr list) : int list = List.collect sinstrToInt sl
 
-let sinstrComp (e : expr) = scomp e [] |> assemble
+let sinstrComp (e : expr) = scomp e [] |> assemble |> intsToFile
