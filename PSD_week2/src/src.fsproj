@@ -36,7 +36,7 @@
     <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Lexing.fsi" />
     <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Parsing.fs" />
     <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Parsing.fsi" />
-    <Compile Include="Library.fs" />
+    <Compile Include="SInstrExercises.fs" />
     <Compile Include="tests.fs" />
   </ItemGroup>
 
@@ -100,11 +100,7 @@
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\.signature.p7s" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\FsLexYacc.Runtime.fsproj" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\FsLexYacc.Runtime.11.3.0.nupkg" />
-    <Content Include="HelloLex\hello.fsl" />
-    <Content Include="HelloLex\hello.fsproj" />
-    <Content Include="HelloLex\hello2.fsproj" />
-    <Content Include="HelloLex\hello3.fsproj" />
-    <Content Include="HelloLex\regExpr.fsl" />
+    <Content Include="RegExpressionExercise\regExpr.fsl" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.dll" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.xml" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\logo.png" />
