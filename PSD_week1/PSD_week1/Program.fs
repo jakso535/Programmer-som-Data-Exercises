@@ -52,22 +52,24 @@ let e10 = If(Var "a", CstI 11, CstI 22)
 let e11 = Sub (Var2 "v", Add (Var2 "w", Var2 "z"))
 let e12 = Mul (CstI2 2, e11)
 let e13 = Add (Var2 "x", Add (Var2 "y", Add (Var2 "z", Var2 "v")))
+
+// extra test case with help from LLM
 let e14 =
     Add(
-        Add (CstI2 0, Var2 "x"),                  // 0 + e  -> e
+        Add (CstI2 0, Var2 "x"),                  
         Add(
-            Add (Var2 "y", CstI2 0),              // e + 0  -> e
+            Add (Var2 "y", CstI2 0),             
             Add(
-                Sub (Var2 "z", CstI2 0),          // e - 0  -> e
+                Sub (Var2 "z", CstI2 0),          
                 Add(
-                    Mul (CstI2 1, Var2 "u"),      // 1 * e  -> e
+                    Mul (CstI2 1, Var2 "u"),      
                     Add(
-                        Mul (Var2 "v", CstI2 1),  // e * 1  -> e
+                        Mul (Var2 "v", CstI2 1),  
                         Add(
-                            Mul (CstI2 0, Var2 "w"),  // 0 * e -> 0
+                            Mul (CstI2 0, Var2 "w"),  
                             Add(
-                                Mul (Var2 "k", CstI2 0), // e * 0 -> 0
-                                Sub (Var2 "p", Var2 "p") // e - e -> 0
+                                Mul (Var2 "k", CstI2 0), 
+                                Sub (Var2 "p", Var2 "p") 
                             )
                         )
                     )
@@ -75,6 +77,7 @@ let e14 =
             )
         )
     )
+    
 let e15 = Add (CstI2 0, CstI2 1)
 
 (* Evaluation within an environment *)
