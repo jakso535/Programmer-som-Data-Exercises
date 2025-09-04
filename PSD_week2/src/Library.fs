@@ -1,5 +1,6 @@
 ﻿module week2
 open Intcomp1
+open Hello_fslex
 
 let sinstrToInt (s : sinstr) : int list = 
     match s with
@@ -14,3 +15,4 @@ let sinstrToInt (s : sinstr) : int list =
 let assemble (sl : sinstr list) : int list = List.collect sinstrToInt sl
 
 let sinstrComp (e : expr) = scomp e [] |> assemble |> intsToFile
+

@@ -10,11 +10,108 @@
   <!-- ORDER MATTERS -->
   <ItemGroup>
     <Compile Include="..\libs\Intcomp\Intcomp1.fs" />
+    <Compile Include="../libs/ProgramsAsDataCodeE2025-main/Lectures/Lec02/HelloLex/hello.fsl"/>
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Arg.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Arg.fsi" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\fslex.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\fslexast.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\fslexlex.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\fslexpars.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Lexing.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Lexing.fsi" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Parsing.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fslex\Parsing.fsi" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Arg.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Arg.fsi" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\fsyacc.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\fsyaccast.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\fsyacclex.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\fsyaccpars.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Lexing.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Lexing.fsi" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Parsing.fs" />
+    <Compile Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\Parsing.fsi" />
+    <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\AssemblyInfo.fs" />
+    <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Lexing.fs" />
+    <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Lexing.fsi" />
+    <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Parsing.fs" />
+    <Compile Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\Parsing.fsi" />
     <Compile Include="Library.fs" />
     <Compile Include="tests.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FSharp.Core" Version="9.0.201" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="fsharp\FsLexYacc.11.3.0\.signature.p7s" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\FsLexYacc.targets" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\cs\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\de\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\en\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\es\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fr\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\FSharp.Core.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\FsLex.Core.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\FsLex.Core.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex.deps.json" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex.runtimeconfig.json" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\FsLexYacc.Runtime.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\FsLexYacc.Runtime.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\it\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\ja\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\ko\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\pl\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\pt-BR\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\ru\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\tr\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\zh-Hans\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\zh-Hant\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\cs\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\de\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\en\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\es\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fr\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\FSharp.Core.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\FsLexYacc.Runtime.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\FsLexYacc.Runtime.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fsyacc" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\FsYacc.Core.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\FsYacc.Core.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fsyacc.deps.json" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fsyacc.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fsyacc.runtimeconfig.json" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\fsyacc.xml" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\it\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\ja\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\ko\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\pl\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\pt-BR\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\ru\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\tr\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\zh-Hans\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\build\fsyacc\net6.0\zh-Hant\FSharp.Core.resources.dll" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\FsLexYacc.11.3.0.nupkg" />
+    <Content Include="fsharp\FsLexYacc.11.3.0\src\FsLexYacc.targets" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\.signature.p7s" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\fable\FsLexYacc.Runtime.fsproj" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\FsLexYacc.Runtime.11.3.0.nupkg" />
+    <Content Include="HelloLex\hello.fsl" />
+    <Content Include="HelloLex\hello.fsproj" />
+    <Content Include="HelloLex\hello2.fsproj" />
+    <Content Include="HelloLex\hello3.fsproj" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.dll" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.xml" />
+    <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="fsharp\FsLexYacc.11.3.0\build\fslex\net6.0\fslex.dll.config" />
+    <None Include="fsharp\FsLexYacc.11.3.0\src\fslex\fslex.fsx" />
+    <None Include="fsharp\FsLexYacc.11.3.0\src\fsyacc\fsyacc.fsx" />
   </ItemGroup>
 </Project>
