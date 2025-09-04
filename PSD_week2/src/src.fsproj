@@ -1,13 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- force NuGet deps (incl. FSharp.Core) into bin -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
+  <!-- ORDER MATTERS -->
   <ItemGroup>
     <Compile Include="..\libs\Intcomp\Intcomp1.fs" />
     <Compile Include="Library.fs" />
+    <Compile Include="tests.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="9.0.201" />
+  </ItemGroup>
 </Project>

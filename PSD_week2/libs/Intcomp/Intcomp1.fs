@@ -358,10 +358,6 @@ let rec scomp (e : expr) (cenv : stackvalue list) : sinstr list =
           scomp e1 cenv @ scomp e2 (Value :: cenv) @ [SMul] 
     | Prim _ -> failwith "scomp: unknown operator";;
 
-let sinstrToInt (s : sinstr) : int list = 
-    match s with
-    | 
-
 let s1 = scomp e1 [];;
 let s2 = scomp e2 [];;
 let s3 = scomp e3 [];;
