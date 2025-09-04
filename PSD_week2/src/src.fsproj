@@ -104,6 +104,7 @@
     <Content Include="HelloLex\hello.fsproj" />
     <Content Include="HelloLex\hello2.fsproj" />
     <Content Include="HelloLex\hello3.fsproj" />
+    <Content Include="HelloLex\regExpr.fsl" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.dll" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\lib\netstandard2.0\FsLexYacc.Runtime.xml" />
     <Content Include="fsharp\FsLexYacc.Runtime.11.3.0\logo.png" />
