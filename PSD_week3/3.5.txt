@@ -1,0 +1,4 @@
+let a = "let y = 8 in y - 37 end";;
+let b = "let y = 8 in q * t * 219";;
+fromString a;;
+fromString b;;
