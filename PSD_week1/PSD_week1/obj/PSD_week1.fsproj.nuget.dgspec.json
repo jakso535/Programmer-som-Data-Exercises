@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/atm/RiderProjects/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {}
+    "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {}
   },
   "projects": {
-    "/Users/atm/RiderProjects/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {
+    "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/atm/RiderProjects/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
+        "projectUniqueName": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
         "projectName": "PSD_week1",
-        "projectPath": "/Users/atm/RiderProjects/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
+        "projectPath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/PSD_week1.fsproj",
         "packagesPath": "/Users/atm/.nuget/packages/",
-        "outputPath": "/Users/atm/RiderProjects/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/obj/",
+        "outputPath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week1/PSD_week1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/atm/.nuget/NuGet/NuGet.Config"
@@ -20,7 +20,8 @@
           "net8.0"
         ],
         "sources": {
-          "/Users/atm/.dotnet/sdk/8.0.413/FSharp/library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/9.0.200/FSharp/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,7 +34,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -42,7 +44,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[8.0.403, )",
+              "version": "[9.0.201, )",
               "generatePathProperty": true
             }
           },
@@ -57,12 +59,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.13, 8.0.13]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.13, 8.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/atm/.dotnet/sdk/8.0.413/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
