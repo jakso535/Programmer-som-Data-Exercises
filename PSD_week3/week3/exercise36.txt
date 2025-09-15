@@ -1,0 +1,8 @@
+Exercise 3.6
+let parsed s = Parse.fromString s;;   
+let compString (s : string) : Expr.sinstr list =  Expr.scomp (parsed s) [];;
+
+compString "1 + 2 * 3";;
+val it: sinstr list = [SCstI 1; SCstI 2; SCstI 3; SMul; SAdd]
+
+Find 3.7 changes in Absyn.fs, ExprPar.fsy, ExprLex.fsl :)
