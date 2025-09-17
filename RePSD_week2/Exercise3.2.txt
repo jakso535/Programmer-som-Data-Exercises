@@ -1,0 +1,11 @@
+Regular expression from exercise 3.2:
+(?:ab)*b*a?b*(?:ba)*b*
+
+
+Creation of DFA:
+DFA State   move(a)   move(b)    NFA State
+S0          S1        S2         S0={2T,3,4}
+S1                    S0         S1={1,2T}
+S2          S3        S0         S2={1,2T,5}
+S3                    S0         S3={1,2T}
+
