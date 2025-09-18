@@ -32,6 +32,3 @@ dotnet fsi -r /Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/
    run (fromString "5+7");;
    run (fromString "let y = 7 in y + 2 end");;
    run (fromString "let f x = x + 7 in f 2 end");;
-
-
-run (fromString "let sum n = if n=1 then 1 else n + sum(n - 1) in sum 1000 end");;

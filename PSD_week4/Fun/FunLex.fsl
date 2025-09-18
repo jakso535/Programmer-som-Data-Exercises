@@ -43,6 +43,8 @@ rule Token = parse
   | "(*"            { commentStart := lexbuf.StartPos;
                       commentDepth := 1; 
                       SkipComment lexbuf; Token lexbuf }
+  | "&&"            { AND }
+  | "||"            { OR }
   | '='             { EQ }
   | "<>"            { NE }
   | '>'             { GT }
@@ -55,7 +57,7 @@ rule Token = parse
   | '/'             { DIV }                     
   | '%'             { MOD }
   | '('             { LPAR }
-  | ')'             { RPAR }
+  | ')'             { RPAR }          
   | eof             { EOF }
   | _               { failwith "Lexer error: illegal symbol" }
 

@@ -1,9 +1,0 @@
-Exercise 4.2
-
-    run (fromString "let sum n = if n=1 then 1 else n + sum(n - 1) in sum 1000 end");;
-
-
-
-Compute the number 38, that is, 3 raised to the power 8. Again, use a recursive function.
-
-    run (fromString "let pow x e = if e = 2 then x * x else x * (pow x (e - 1)) in pow 3 8 end");;
