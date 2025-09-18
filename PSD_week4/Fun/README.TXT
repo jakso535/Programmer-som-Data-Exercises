@@ -24,9 +24,9 @@ B. Generating and compiling the lexer and parser, and loading them:
 
 C. Using the lexer, parser and first-order evaluator together:
 
-   fsyacc --module FunPar FunPar.fsy
-   fslex --unicode FunLex.fsl
-   dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs FunPar.fs FunLex.fs Parse.fs Fun.fs ParseAndRun.fs
+fsyacc --module FunPar FunPar.fsy
+fslex --unicode FunLex.fsl
+dotnet fsi -r /Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll Util.fs Absyn.fs FunPar.fs FunLex.fs Parse.fs Fun.fs ParseAndRun.fs
 
    open ParseAndRun;;
    run (fromString "5+7");;
@@ -34,8 +34,4 @@ C. Using the lexer, parser and first-order evaluator together:
    run (fromString "let f x = x + 7 in f 2 end");;
 
 
-fromString 
-            @"let fac x = if x=0 then 1 else x * fac(x - 1)
-              in fac n end"
-
-(fromString "let sum n = if x=1 then 1 else n + sum (n-1) in sum n end")
+run (fromString "let sum n = if n=1 then 1 else n + sum(n - 1) in sum 1000 end");;
