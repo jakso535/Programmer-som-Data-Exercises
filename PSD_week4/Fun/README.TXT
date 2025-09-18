@@ -34,3 +34,8 @@ C. Using the lexer, parser and first-order evaluator together:
    run (fromString "let f x = x + 7 in f 2 end");;
 
 
+fromString 
+            @"let fac x = if x=0 then 1 else x * fac(x - 1)
+              in fac n end"
+
+(fromString "let sum n = if x=1 then 1 else n + sum (n-1) in sum n end")
