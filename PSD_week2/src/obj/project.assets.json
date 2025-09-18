@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
+    "net8.0": {
       "FSharp.Core/9.0.201": {
         "type": "package",
         "compile": {
@@ -103,7 +103,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0": [
+    "net8.0": [
       "FSharp.Core >= 9.0.201"
     ]
   },
@@ -113,9 +113,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/src.fsproj",
-      "projectName": "src",
-      "projectPath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/src.fsproj",
+      "projectUniqueName": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/hello2.fsproj",
+      "projectName": "hello2",
+      "projectPath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/hello2.fsproj",
       "packagesPath": "/Users/atm/.nuget/packages/",
       "outputPath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/",
       "projectStyle": "PackageReference",
@@ -123,7 +123,7 @@
         "/Users/atm/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net9.0"
+        "net8.0"
       ],
       "sources": {
         "/usr/local/share/dotnet/library-packs": {},
@@ -131,8 +131,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -140,11 +140,12 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
-      "net9.0": {
-        "targetAlias": "net9.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
@@ -164,6 +165,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.13, 8.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "version": "[8.0.13, 8.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.13, 8.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

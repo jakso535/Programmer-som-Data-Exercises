@@ -1,0 +1,5 @@
+/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/Debug/net8.0/hello2.fsproj.AssemblyReference.cache
+/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/Debug/net8.0/hello2.AssemblyInfoInputs.cache
+/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/Debug/net8.0/hello2.AssemblyInfo.fs
+/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/Debug/net8.0/hello2.fsproj.CoreCompileInputs.cache
+/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/obj/Debug/net8.0/hello2.sourcelink.json

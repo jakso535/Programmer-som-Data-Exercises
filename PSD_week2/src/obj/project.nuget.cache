@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5dI3GjU7Ti4=",
+  "dgSpecHash": "axzL9r9fcF4=",
   "success": true,
-  "projectFilePath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/src.fsproj",
+  "projectFilePath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/hello2.fsproj",
   "expectedPackageFiles": [
-    "/Users/atm/.nuget/packages/fsharp.core/9.0.201/fsharp.core.9.0.201.nupkg.sha512"
+    "/Users/atm/.nuget/packages/fsharp.core/9.0.201/fsharp.core.9.0.201.nupkg.sha512",
+    "/Users/atm/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/atm/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/atm/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.13/microsoft.netcore.app.host.osx-arm64.8.0.13.nupkg.sha512"
   ],
   "logs": []
 }

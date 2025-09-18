@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "16t+yUgdQG8=",
+  "success": true,
+  "projectFilePath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/libs/ProgramsAsDataCodeE2025-main/Lectures/Lec02/HelloLex/hello3.fsproj",
+  "expectedPackageFiles": [
+    "/Users/atm/.nuget/packages/fsharp.core/9.0.201/fsharp.core.9.0.201.nupkg.sha512"
+  ],
+  "logs": []
+}

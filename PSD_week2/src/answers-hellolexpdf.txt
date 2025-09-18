@@ -1,0 +1,73 @@
+Question 1:
+    The regular expressions involved in parsing (the left hand-side) 
+    matches a singular digit from 0 to 9, with the semantic value
+    (the right side) of LexBuffer<char>.LexemeString lexbuf which
+    is the parsed substring. 
+    Else, if matches any other character via the regular expression 
+    '_', the semantic value is failwith. 
+
+Question 2:
+    There are 3 states.
+    --
+        (base) atm@Alexs-MacBook-Pro HelloLex % fslex --unicode hello.fsl
+        compiling to dfas (can take a while...)
+        3 states
+        writing output
+    --
+
+
+Question 3:
+    --
+        (base) atm@Alexs-MacBook-Pro HelloLex % fsharpc -r /Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll --standalone hello.fs
+        Microsoft (R) F# Compiler version 11.0.0.0 for F# 5.0
+        Copyright (c) Microsoft Corporation. All Rights Reserved.
+        (base) atm@Alexs-MacBook-Pro HelloLex % mono hello.exe
+        Hello World from FsLex!
+
+        Please pass a digit:
+        39
+        The lexer recognizes 3
+    --
+
+Question 4:
+    --
+        (base) atm@Alexs-MacBook-Pro HelloLex % dotnet bin/Debug/net9.0/hello2.dll
+        Hello World from FsLex!
+
+        Please pass a digit:
+        349
+        The lexer recognizes 349
+    --
+
+Question 5:
+    --
+        (base) atm@Alexs-MacBook-Pro HelloLex % dotnet bin/Debug/net9.0/hello3.dll
+        Hello World from FsLex!
+
+        Please pass a digit:
+        2349.23498
+        The lexer recognizes 2349.23498
+    --
+
+Question 6:
+    It recognizes 34 as 34 because of the regular expression 
+
+        ['0'-'9']+
+
+    that matches one or more digits.
+
+    It recognizes 34.24 as 34.24 because of the regular expression 
+
+        ['+''-']? ['0'-'9']* '.' ['0'-'9']+
+
+    that matches floats as two series of digits separated by a '.'
+
+    It does NOT recognize 34,34 as 34,34 but rather 34, because there
+    is no expression to match ',' except '_', so there lexer fails 
+    after 34, which is a valid multiple digit expression as per 
+
+        ['0'-'9']+
+
+    To recognize it, you could do:
+
+        ['+''-']? ['0'-'9']* ',' ['0'-'9']+
