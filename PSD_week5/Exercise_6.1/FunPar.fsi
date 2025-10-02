@@ -24,6 +24,8 @@ type token =
   | NOT
   | THEN
   | TRUE
+  | ANON
+  | FUN
   | CSTBOOL of (bool)
   | NAME of (string)
   | CSTINT of (int)
@@ -51,6 +53,8 @@ type tokenId =
     | TOKEN_NOT
     | TOKEN_THEN
     | TOKEN_TRUE
+    | TOKEN_ANON
+    | TOKEN_FUN
     | TOKEN_CSTBOOL
     | TOKEN_NAME
     | TOKEN_CSTINT
@@ -62,6 +66,7 @@ type nonTerminalId =
     | NONTERM_Expr
     | NONTERM_AtExpr
     | NONTERM_AppExpr
+    | NONTERM_AnonExpr
     | NONTERM_Const
 /// This function maps tokens to integer indexes
 val tagOfToken: token -> int

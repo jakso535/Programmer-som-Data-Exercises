@@ -25,6 +25,7 @@ let rec lookup env x =
 type value = 
   | Int of int
   | Closure of string * string * expr * value env       (* (f, x, fBody, fDeclEnv) *)
+  | AnonClos of string * expr * value env               (* Our Fun closure (x,body,declEnv) *)
 
 let rec eval (e : expr) (env : value env) : int =
     match e with 

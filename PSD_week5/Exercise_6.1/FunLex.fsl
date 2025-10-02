@@ -31,6 +31,7 @@ let keyword s =
     | "not"   -> NOT
     | "then"  -> THEN
     | "true"  -> CSTBOOL true
+    | "fun"   -> ANON  (* Our Fun keyword *)
     | _       -> NAME s
 }
 
@@ -43,6 +44,7 @@ rule Token = parse
   | "(*"            { commentStart := lexbuf.StartPos;
                       commentDepth := 1; 
                       SkipComment lexbuf; Token lexbuf }
+  | "->"            { FUN }  (* Our Fun token *)
   | '='             { EQ }
   | "<>"            { NE }
   | '>'             { GT }
