@@ -60,7 +60,7 @@ E. Using the lexer, parser and higher-order evaluator together:
 
    fsyacc --module FunPar FunPar.fsy
    fslex --unicode FunLex.fsl	
-   dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs FunPar.fs FunLex.fs Parse.fs HigherFun.fs ParseAndRunHigher.fs
+   dotnet fsi -r /Users/Jake/Desktop/ITU/5-semester/ProgrammerSomData/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll Util.fs Absyn.fs FunPar.fs FunLex.fs Parse.fs HigherFun.fs ParseAndRunHigher.fs
 
    open ParseAndRunHigher;;
    run (fromString @"let twice f = let g x = f(f(x)) in g end 
