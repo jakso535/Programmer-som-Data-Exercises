@@ -1,2 +1,7 @@
-in the let-body, the type of f should be polymorphic—why?
+1. In the let-body, the type of f should be polymorphic—why?
+    
+    Because we cannot guarantee that x and f are of the same type, and therefore, f should be polymorphic.
 
+2. In the let-body, f should not be polymorphic – why?
+
+    Here, f is only ever called with x or x+1, such that if doesn't need to be polymorphic, as it only takes one type.
