@@ -1,0 +1,51 @@
+Exercise 6.5:
+Part 1:
+
+inferType (fromString "let f x = 1 in f f end");;
+Type: int
+
+inferType (fromString "let f g = g g in f end");;
+Type: error circularity
+Why?
+Because g is a function with a parameter "g g" that is of the same type as g, 
+then the parameter itself would need to take an argument to its own function, 
+thereby creating an infinite loop.
+
+inferType (fromString "let f x = let g y = y in g false end in f 42 end");;
+Type: bool
+
+inferType (fromString "let f x = let g y = if true then y else x in g false end in f 42 end");;
+type error: bool and int
+Why?
+The TypeInference class does not allow multiple types to be returned in one function. 
+Since y is defined as being a bool from "g false"
+and x is an int from "f 42", we get this error when we return either x or y.
+
+inferType (fromString "let f x = let g y = if true then y else x in g false end in f true end");;
+Type: bool
+
+Part 2:
+bool -> bool
+inferType (fromString "let f x = if x = true then false else true in f end");;
+
+int -> int
+inferType (fromString "let f x = x * x in f end");;
+
+int -> int -> int
+inferType (fromString "let f x = let g y = x + y in g end in f end");;
+
+’a -> ’b -> ’a
+inferType (fromString "let f x = let g y = x in g end in f end");;
+
+’a -> ’b -> ’b
+inferType (fromString "let f x = let g y = y in g end in f end");;
+
+(’a -> ’b) -> (’b -> ’c) -> (’a -> ’c)
+inferType (fromString "let f x = let g y = let h z = y (x z) in h end in g end in f end");;
+
+’a -> ’b
+inferType (fromString "let f x = let g = f x in g end in f end");;
+
+’a
+???
+
