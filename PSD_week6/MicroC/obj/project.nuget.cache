@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nFYGc5kimFg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ssxjs\\RiderProjects\\Programmer-som-Data-Exercises\\PSD_week6\\MicroC\\MicroC.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ssxjs\\.nuget\\packages\\fsharp.core\\9.0.100\\fsharp.core.9.0.100.nupkg.sha512",
+    "C:\\Users\\ssxjs\\.nuget\\packages\\fslexyacc.runtime\\11.3.0\\fslexyacc.runtime.11.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

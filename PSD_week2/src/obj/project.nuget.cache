@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "axzL9r9fcF4=",
+  "dgSpecHash": "IaLZ317x5FU=",
   "success": true,
-  "projectFilePath": "/Users/atm/Desktop/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/src/hello2.fsproj",
+  "projectFilePath": "C:\\Users\\ssxjs\\RiderProjects\\Programmer-som-Data-Exercises\\PSD_week2\\src\\src.fsproj",
   "expectedPackageFiles": [
-    "/Users/atm/.nuget/packages/fsharp.core/9.0.201/fsharp.core.9.0.201.nupkg.sha512",
-    "/Users/atm/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
-    "/Users/atm/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
-    "/Users/atm/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.13/microsoft.netcore.app.host.osx-arm64.8.0.13.nupkg.sha512"
+    "C:\\Users\\ssxjs\\.nuget\\packages\\fsharp.core\\9.0.100\\fsharp.core.9.0.100.nupkg.sha512",
+    "C:\\Users\\ssxjs\\.nuget\\packages\\fslexyacc\\11.3.0\\fslexyacc.11.3.0.nupkg.sha512",
+    "C:\\Users\\ssxjs\\.nuget\\packages\\fslexyacc.runtime\\11.3.0\\fslexyacc.runtime.11.3.0.nupkg.sha512"
   ],
   "logs": []
 }
