@@ -12,7 +12,7 @@ A. Generating and compiling the lexer and parser for micro-C, and
 
    fslex --unicode CLex.fsl
    fsyacc --module CPar CPar.fsy
-   fsharpi -r FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+   dotnet fsi -r /Users/Jake/Desktop/ITU/5-semester/ProgrammerSomData/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
 
    open ParseAndRun;;
    fromFile "ex1.c";;
