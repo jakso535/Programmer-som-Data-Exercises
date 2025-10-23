@@ -212,7 +212,6 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
         @ [CSTI 1]
         @ [ADD]
         @ [STI]  
-        @ [LDI]
     | PreDec acc     ->
         cAccess acc varEnv funEnv 
         @ [DUP] 
@@ -220,7 +219,6 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
         @ [CSTI 1]
         @ [SUB]
         @ [STI] 
-        @ [LDI]
 
 (* Generate code to access variable, dereference pointer or index array.
    The effect of the compiled code is to leave an lvalue on the stack.   *)
