@@ -25,10 +25,15 @@ B. To compile and use the micro-C compiler
    fslex --unicode CLex.fsl
    fsyacc --module CPar CPar.fsy
    dotnet fsi -r /Users/atm/Desktop/uni/itu/semester-5/programmer-som-data/assignments/Programmer-som-Data-Exercises/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Machine.fs Comp.fs ParseAndComp.fs   
+   dotnet fsi -r /Users/Jake/Desktop/ITU/5-semester/Programmer-som-Data-Exercises/PSD_week2/libs/ProgramsAsDataCodeE2025-main/fsharp/FsLexYacc.Runtime.11.3.0/lib/netstandard2.0/FsLexYacc.Runtime.dll Absyn.fs CPar.fs CLex.fs Parse.fs Machine.fs Comp.fs ParseAndComp.fs   
+
 
    open ParseAndComp;;
-   compileToFile (fromFile "ex11.c") "ex11.out";;
+   compileToFile (fromFile "Exercise-8.3.c") "test6.out";;
+
    #q;;
+   
+   java Machinetrace test6.out
 
    javac Machine.java
    java Machine ex11.out 8
