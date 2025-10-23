@@ -1,0 +1,15 @@
+Compile ex8.c and study the symbolic bytecode to see why it is so
+much slower than the handwritten 20 million iterations loop in prog1:
+
+    prog1 is not working within a normal C function, so it contains no boilerplate and no variable usages. 
+    This means no store and no load, which has a significant impact on speed. 
+    We don't concern ourselves directly with bp and sp either, making the byte code a lot shorter.
+
+Compile ex13.c and study the symbolic bytecode to see how loops and condi-
+tionals interact; describe what you see:
+    They interact through jumps. If the conditional set in the loop is false,
+    we continue to the next instruction out of the loop. 
+    If its true, we jump to the label containing the loops code block using IFNZRO.
+    If the conditional inside the loop (if) is true, 
+    we jump to the label containing the code block within it using IFZERO in this case.
+    If its not true, we continue out into the loop and continue from there.
