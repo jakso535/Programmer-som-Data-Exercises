@@ -24,7 +24,9 @@ and expr =
   | Orelse of expr * expr            (* Sequential or               *)
   | Call of string * expr list       (* Function call f(...)        *)
   | PreInc of access                 (* C/C++/Java/C# ++i or ++a[e] *)
-  | PreDec of access                 (* C/C++/Java/C# --i or --a[e] *) 
+  | PreDec of access                 (* C/C++/Java/C# --i or --a[e] *)
+  | ShortIf of expr * expr * expr    (* Our short If statement      *)
+ 
                                                                    
 and access =                                                       
   | AccVar of string                 (* Variable access        x    *) 

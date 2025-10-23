@@ -121,7 +121,7 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       cExpr e varEnv funEnv @ [IFZERO labelse] 
       @ cStmt stmt1 varEnv funEnv @ [GOTO labend]
       @ [Label labelse] @ cStmt stmt2 varEnv funEnv
-      @ [Label labend]           
+      @ [Label labend]              
     | While(e, body) ->
       let labbegin = newLabel()
       let labtest  = newLabel()
@@ -204,6 +204,16 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
       @ [IFNZRO labtrue]
       @ cExpr e2 varEnv funEnv
       @ [GOTO labend; Label labtrue; CSTI 1; Label labend]
+    | ShortIf(e1, e2, e3) ->
+      let labelse = newLabel()
+      let labend  = newLabel()
+      cExpr e1 varEnv funEnv 
+      @ [IFZERO labelse] 
+      @ cExpr e2 varEnv funEnv 
+      @ [GOTO labend]
+      @ [Label labelse] 
+      @ cExpr e3 varEnv funEnv
+      @ [Label labend]   
     | Call(f, es) -> callfun f es varEnv funEnv
     | PreInc acc     -> 
         cAccess acc varEnv funEnv 
