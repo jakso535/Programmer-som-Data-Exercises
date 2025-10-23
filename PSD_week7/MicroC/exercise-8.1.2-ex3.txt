@@ -1,0 +1,48 @@
+L0:
+    24     -> LDARGS    -> void main(int n)
+    19 1 5 -> CALL 1 L5 -> { ...
+    25     -> STOP      -> }
+
+L5:
+    15 1   -> INCSP 1   -> int i; 
+    13     -> GETBP     -> int i; 
+    0 1    -> CSTI 1    -> int i; 
+    1      -> ADD       -> int i; 
+    0 0    -> CSTI 0    -> i=0;
+    12     -> STI       -> i=0;
+    15 -1  -> INCSP -1  -> i=0;
+    16 43  -> GOTO 43   -> while ...
+    
+L18:
+    13     -> GETBP     -> print i; 
+    0 1    -> CSTI 1    -> print i; 
+    1      -> ADD       -> print i; 
+    11     -> LDI       -> print i; 
+    22     -> PRINTI    -> print i; 
+    15 -1  -> INCSP -1  -> print i; // add -> 2 nums become 1 -> dec sp
+    13     -> GETBP     -> i=i+1;
+    0 1    -> CSTI 1    -> i=i+1;
+    1      -> ADD       -> i=i+1;
+    13     -> GETBP     -> i=i+1;
+    0 1    -> CSTI 1    -> i=i+1;
+    1      -> ADD       -> i=i+1;
+    11     -> LDI       -> i=i+1;
+    0 1    -> CSTI 1    -> i=i+1;
+    1      -> ADD       -> i=i+1;
+    12     -> STI       -> i=i+1;
+    15 -1  -> INCSP -1  -> i=i+1;
+    15 0   -> INCSP 0   -> } // scope exit; everything already popped
+    
+L43:                    -> i < n
+    13     -> GETBP     -> i  
+    0 1    -> CSTI 1    -> i
+    1      -> ADD       -> i
+    11     -> LDI       -> i
+    13     -> GETBP     -> n
+    0 0    -> CSTI 0    -> n
+    1      -> ADD       -> n
+    11     -> LDI       -> n
+    7      -> LT        -> <
+    18 18  -> IFNZRO 18 -> // i is less than n
+    15 -1  -> INCSP -1  -> // add -> 2 nums become 1 -> dec sp
+    21 0   -> RET 0     -> }

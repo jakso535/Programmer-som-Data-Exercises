@@ -1,0 +1,60 @@
+L0:
+    24       -> LDARGS      -> void main(int n)
+    19 1 5   -> CALL 1 L5   -> { ...
+    25       -> STOP        -> }
+
+L5:
+    15 1     -> INCSP 1     -> int r; 
+    13       -> GETBP       -> int r; 
+    0 1      -> CSTI 1      -> int r; 
+    1        -> ADD         -> int r; 
+    13       -> GETBP       -> // load n
+    0 0      -> CSTI 0      -> // load n
+    1        -> ADD         -> // load n
+    11       -> LDI         -> // load n
+    12       -> STI         -> r = n;
+    15 -1    -> INCSP -1    -> r = n; 
+    15 1     -> INCSP 1     -> {
+    13       -> GETBP       -> // load n
+    0 0      -> CSTI 0      -> // load n
+    1        -> ADD         -> // load n
+    11       -> LDI         -> // load n
+    13       -> GETBP       -> // load new r  
+    0 2      -> CSTI 2      -> // load new r 
+    1        -> ADD         -> // load new r 
+    19 2 57  -> CALL 2 L57  -> square(n, &r);
+    15 -1    -> INCSP -1    -> // dec sp after add
+    13       -> GETBP       -> // load new r 
+    0 2      -> CSTI 2      -> // load new r 
+    1        -> ADD         -> // load new r 
+    11       -> LDI         -> // load new r 
+    22       -> PRINTI      -> print r;
+    15 -1    -> INCSP -1    -> // dec sp after add
+    15 -1    -> INCSP -1    -> }
+    13       -> GETBP       -> // load old r
+    0 1      -> CSTI 1      -> // load old r
+    1        -> ADD         -> // load old r
+    11       -> LDI         -> // load old r
+    22       -> PRINTI      -> print r;
+    15 -1    -> INCSP -1    -> // dec sp after add 
+    15 -1    -> INCSP -1    -> // cleanup
+    21 0     -> RET 0       -> }
+
+L57:
+    13       -> GETBP       -> *rp // since call is w/ bp = 2, new r is on bp + 1
+    0 1      -> CSTI 1      -> *rp
+    1        -> ADD         -> *rp
+    11       -> LDI         -> *rp
+    13       -> GETBP       -> i
+    0 0      -> CSTI 0      -> i
+    1        -> ADD         -> i
+    11       -> LDI         -> i
+    13       -> GETBP       -> i // second i
+    0 0      -> CSTI 0      -> i // second i
+    1        -> ADD         -> i // second i
+    11       -> LDI         -> i // second i
+    3        -> MUL         -> *rp = i * i; // doesn't inc sp
+    12       -> STI         -> *rp = i * i;
+    15 -1    -> INCSP -1    -> // dec sp after mul
+    15 0     -> INCSP 0     -> // scope exit; everything already popped
+    21 1     -> RET 1       -> }

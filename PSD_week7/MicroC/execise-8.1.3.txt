@@ -1,0 +1,11 @@
+stack starts with [4] from LDARGS (n)
+
+loop, generally:
+IFNZRO, do loop
+get bp for i 
+load value
+print
+get bp for i (address)
+get bp for i again, and add one
+store into i address
+is not IFNZRO, dec sp and RET/STOP
