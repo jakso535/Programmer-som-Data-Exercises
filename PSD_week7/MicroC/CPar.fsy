@@ -14,7 +14,7 @@ let nl = CstI 10
 %token <int> CSTINT CSTBOOL
 %token <string> CSTSTRING NAME
 
-%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR IFTHEN THENELSE
+%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR IFTHEN THENELSE SWITCH CASE
 %token PLUS MINUS TIMES DIV MOD PREDEC PREINC
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
@@ -102,6 +102,7 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
+  | SWITCH LPAR Expr RPAR LBRACE Cases RBRACE  { Switch($3, $6) }
   | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM {
       Block [
         Stmt(Expr($3));
@@ -109,6 +110,10 @@ StmtM:  /* No unbalanced if-else */
       ]
     }
 ;
+
+Cases:
+      CASE Const THENELSE LBRACE Stmt RBRACE        { Case($2, $5) }
+    | CASE Const THENELSE LBRACE Stmt RBRACE Cases  { Cases(Case($2, $5), $7) }
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }
