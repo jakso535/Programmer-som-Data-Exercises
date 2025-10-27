@@ -128,14 +128,20 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       [GOTO labtest; Label labbegin] @ cStmt body varEnv funEnv
       @ [Label labtest] @ cExpr e varEnv funEnv @ [IFNZRO labbegin]
     | Switch(e, cases) ->
-      let rec loop stmts =
+      let rec loop (cases : (expr * stmt) list) =
         match cases with
-        | Cases[] -> []
-        | Cases((e', stmt) :: cases') ->
+        | [] -> []
+        | (e', block) :: cases' ->
+          let labswitch = newLabel()
+          let labend = newLabel()
           let be = Prim2("==", e, e')
-          let rest = loop cases'
-          let ifStmt = If(be, stmt, Block [])
-          cStmt ifStmt varEnv funEnv @ rest
+          cExpr be varEnv funEnv 
+          @ [IFZERO labswitch]
+          @ cStmt block varEnv funEnv 
+          @ [GOTO labend]
+          @ [Label labswitch] 
+          @ loop cases' 
+          @ [Label labend]
       loop cases
     | Expr e -> 
       cExpr e varEnv funEnv @ [INCSP -1]

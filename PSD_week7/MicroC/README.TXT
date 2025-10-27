@@ -29,12 +29,12 @@ B. To compile and use the micro-C compiler
 
 
    open ParseAndComp;;
-   compileToFile (fromFile "Exercise-8.5.c") "Exercise-8.5.out";;
+   compileToFile (fromFile "Exercise-8.6.c") "Exercise-8.6.out";;
 
    #q;;
-   java Machine Exercise-8.3.out 8
+   java Machine Exercise-8.6.out 1
    
-   java Machinetrace test6.out
+   java Machinetrace Exercise-8.6.out
 
    javac Machine.java
    java Machine Exercise-8.3.out 8
