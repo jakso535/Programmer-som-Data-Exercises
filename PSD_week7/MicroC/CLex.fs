@@ -212,12 +212,12 @@ and Token  lexbuf =
           )
   | 4 -> ( 
 # 56 "CLex.fsl"
-                                     IFTHEN 
+                                     QUESTION 
 # 216 "CLex.fs"
           )
   | 5 -> ( 
 # 57 "CLex.fsl"
-                                     THENELSE 
+                                     COLON 
 # 221 "CLex.fs"
           )
   | 6 -> ( 

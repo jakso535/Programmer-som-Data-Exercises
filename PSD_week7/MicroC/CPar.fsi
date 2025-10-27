@@ -39,8 +39,8 @@ type token =
   | VOID
   | WHILE
   | FOR
-  | IFTHEN
-  | THENELSE
+  | QUESTION
+  | COLON
   | SWITCH
   | CASE
   | CSTSTRING of (string)
@@ -86,8 +86,8 @@ type tokenId =
     | TOKEN_VOID
     | TOKEN_WHILE
     | TOKEN_FOR
-    | TOKEN_IFTHEN
-    | TOKEN_THENELSE
+    | TOKEN_QUESTION
+    | TOKEN_COLON
     | TOKEN_SWITCH
     | TOKEN_CASE
     | TOKEN_CSTSTRING
@@ -111,6 +111,7 @@ type nonTerminalId =
     | NONTERM_Stmt
     | NONTERM_StmtM
     | NONTERM_Cases
+    | NONTERM_Case
     | NONTERM_StmtU
     | NONTERM_Expr
     | NONTERM_ExprNotAccess
