@@ -11,7 +11,7 @@ open Absyn
 (* Plain parsing from a string, with poor error reporting *)
 
 let fromString (str : string) : program =
-    let lexbuf = LexBuffer<char>.FromString(str)
+    let lexbuf = (*Lexing.*)LexBuffer<char>.FromString(str)
     try 
       CPar.Main CLex.Token lexbuf
     with 
@@ -23,7 +23,7 @@ let fromString (str : string) : program =
 
 let fromFile (filename : string) =
     use reader = new StreamReader(filename)
-    let lexbuf = LexBuffer<char>.FromTextReader reader
+    let lexbuf = (*Lexing.*)LexBuffer<char>.FromTextReader reader
     try 
       CPar.Main CLex.Token lexbuf
     with 

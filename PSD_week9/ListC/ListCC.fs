@@ -14,4 +14,4 @@ let _ = if args.Length > 1 then
            try ignore (Comp.compileToFile (Parse.fromFile source) target)
            with Failure msg -> printf "ERROR: %s\n" msg
         else
-           printf "Usage: listcc <source file>\n";;
+           printf "Usage: dotnet run <source file>\n";;
